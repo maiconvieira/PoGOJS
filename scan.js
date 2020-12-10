@@ -832,33 +832,29 @@
 // Melmetal
 // Sirfetch’d
 
+function remainTime() {}
+function calcUpper() {}
+
 function statsBulbasaur(objeto) {
-    if (dict.attack <= 15 && dict.defence <= 15 && dict.stamina <= 15 && dict.level <= 40) {
-        console.log(JSON.stringify(pokeDict[pk.id]["name"], null, 4));
-    // text += "Ivysaur (" + pokeDict[pk.id]["name"] + "): \t" + pk.level + " - " + pk.cp + "\t" + pk.center.lat + "," + pk.center.lng + "\n\r";
-  // } else if (statsBulbasaur.attack == 0 && statsBulbasaur.defence == 14 && statsBulbasaur.stamina == 11 && statsBulbasaur.level <= 21) {
-  //   console.log(JSON.stringify(dict, null, 4));
-    } else {
-        console.log(JSON.stringify('Bulbasaur falhou', null, 4));
-    }
+  if (dict.attack <= 15 && dict.defence <= 15 && dict.stamina <= 15 && dict.level <= 40) {
+    console.log("Ivysaur (" + dict.name + ") LVL:" + dict.level + " CP: " + dict.cp + " - " + dict.lat + "," + dict.lng)
+  } else if (dict.attack == 0 && dict.defence == 14 && dict.stamina == 11 && dict.level <= 21) {
+    console.log("3 (" + dict.name + ") LVL:" + dict.level + " CP: " + dict.cp + " - " + dict.lat + "," + dict.lng)
+  } else { console.log(JSON.stringify('Bulbasaur falhou', null, 4)) }
 }
 function statsCharmander(objeto) {
     if (dict.attack <= 15 && dict.defence <= 15 && dict.stamina <= 15 && dict.level <= 40) {
-        console.log(JSON.stringify(dict, null, 4));
-  // } else if (statsCharmander.attack == 0 && statsCharmander.defence == 14 && statsCharmander.stamina == 11 && statsCharmander.level <= 21) {
-  //   console.log(JSON.stringify(dict, null, 4));
-    } else {
-        console.log(JSON.stringify('Charmander falhou', null, 4));
-    }
+        console.log("5 (" + dict.name + ") LVL:" + dict.level + " CP: " + dict.cp + " - " + dict.lat + "," + dict.lng)
+    } else if (dict.attack == 0 && dict.defence == 14 && dict.stamina == 11 && dict.level <= 21) {
+          console.log("6 (" + dict.name + ") LVL:" + dict.level + " CP: " + dict.cp + " - " + dict.lat + "," + dict.lng)
+    } else { console.log(JSON.stringify('Charmander falhou', null, 4)) }
 }
 function statsSquirtle(objeto) {
-  if (statsSquirtle.attack <= 15 && statsSquirtle.defence <= 15 && statsSquirtle.stamina <= 15 && statsSquirtle.level <= 40) {
-    console.log(JSON.stringify('OK', null, 4));
- // } else if (statsSquirtle.attack == 0 && statsSquirtle.defence == 14 && statsSquirtle.stamina == 11 && statsSquirtle.level <= 21) {
- //   console.log(JSON.stringify(dict, null, 4));
-  } else {
-        console.log(JSON.stringify('Squirtle falhou', null, 4));
-    }
+    if (dict.attack <= 15 && dict.defence <= 15 && dict.stamina <= 15 && dict.level <= 40) {
+        console.log("8 (" + dict.name + ") LVL:" + dict.level + " CP: " + dict.cp + " - " + dict.lat + "," + dict.lng)
+    } else if (dict.attack == 0 && dict.defence == 14 && dict.stamina == 11 && dict.level <= 21) {
+          console.log("9 (" + dict.name + ") LVL:" + dict.level + " CP: " + dict.cp + " - " + dict.lat + "," + dict.lng)
+    } else { console.log(JSON.stringify('Squirtle falhou', null, 4)) }
 }
 
 var i = 0;
@@ -874,6 +870,7 @@ for (; i < pokemons.length; ) {
         dict.stamina = pokemons[i].attack;
         dict.level = pokemons[i].stamina;
         dict.cp = pokemons[i].cp;
+        dict.despawn = pokemons[i].despawn;
         dict.lat = pokemons[i].center.lat;
         dict.lng = pokemons[i].center.lng;
         i++;
